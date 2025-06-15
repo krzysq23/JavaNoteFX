@@ -1,4 +1,4 @@
-module pl.note.javanotefx {
+module pl.note {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -10,4 +10,6 @@ module pl.note.javanotefx {
     opens pl.note.controller to javafx.fxml;
     exports pl.note;
     opens pl.note to javafx.fxml;
+    exports pl.note.model;
+    opens pl.note.model to javafx.fxml;
 }

@@ -1,3 +1,11 @@
 .btn {
     -fx-cursor: hand;
 }
+.note-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.note-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #777;
+}

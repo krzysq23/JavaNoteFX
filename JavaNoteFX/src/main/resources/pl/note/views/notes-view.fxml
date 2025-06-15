@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.HBox?>
 
+<?import javafx.scene.control.TextField?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="pl.note.controller.NoteController" stylesheets="@../style/style.css">
 
     <left>
@@ -17,8 +18,8 @@
                 <Insets right="10" left="10"/>
             </padding>
             <Label text="Notatki" styleClass="h4"/>
-            <ListView fx:id="notatkiListView" VBox.vgrow="ALWAYS" styleClass="list-group"/>
-            <Button fx:id="nowaNotatkaButton" text="Dodaj nową notatkę" styleClass="btn, btn-warning"/>
+            <ListView fx:id="noteListView" VBox.vgrow="ALWAYS" styleClass="list-group"/>
+            <Button onAction="#addNewNote" text="Dodaj nową notatkę" styleClass="btn, btn-warning"/>
         </VBox>
     </left>
 
@@ -28,10 +29,11 @@
                 <Insets right="10" left="10"/>
             </padding>
             <Label styleClass="h4"/>
-            <TextArea fx:id="trescTextArea" prefRowCount="20" wrapText="true" styleClass="form-control"/>
+            <TextField fx:id="titleTextArea" styleClass="form-control" promptText="Tutuł..."/>
+            <TextArea fx:id="noteTextArea" prefRowCount="20" wrapText="true" styleClass="form-control"/>
             <HBox spacing="10.0">
-                <Button fx:id="zapiszButton" text="Zapisz" styleClass="btn, btn-success"/>
-                <Button fx:id="usunButton" text="Usuń" styleClass="btn, btn-danger"/>
+                <Button onAction="#saveNote" text="Zapisz" styleClass="btn, btn-success"/>
+                <Button onAction="#removeNote" text="Usuń" styleClass="btn, btn-danger"/>
             </HBox>
         </VBox>
     </center>
