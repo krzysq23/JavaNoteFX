@@ -40,7 +40,19 @@ public class Database {
         notes.add(note);
     }
 
-    public static void remove(Note note) {
-        notes.remove(note);
+    public static void edit(Note note) {
+        notes.stream()
+                .filter(n -> n.getId() == note.getId())
+                .findFirst().ifPresent(n -> {
+                    n.setTitle(note.getTitle());
+                    n.setContent(note.getContent());
+                    n.setEditDate(now());
+                });
     }
+
+    public static void removeById(int id) {
+        Note noteToRM = findById(id);
+        notes.remove(noteToRM);
+    }
+
 }

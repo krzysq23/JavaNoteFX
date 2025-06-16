@@ -9,3 +9,7 @@
     -fx-font-size: 12px;
     -fx-text-fill: #777;
 }
+.list-view:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

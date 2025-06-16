@@ -29,7 +29,8 @@
                 <Insets right="10" left="10"/>
             </padding>
             <Label styleClass="h4"/>
-            <TextField fx:id="titleTextArea" styleClass="form-control" promptText="Tutuł..."/>
+            <TextField fx:id="noteId" visible="false" managed="false" />
+            <TextField fx:id="titleTextArea" styleClass="form-control" promptText="Tytuł..."/>
             <TextArea fx:id="noteTextArea" prefRowCount="20" wrapText="true" styleClass="form-control"/>
             <HBox spacing="10.0">
                 <Button onAction="#saveNote" text="Zapisz" styleClass="btn, btn-success"/>
